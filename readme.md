@@ -33,3 +33,6 @@ node server.js
 
 Note that you have to run this before sharing your network in order not to get EADDRINUSE error message
 
+you can test by using the following command:
+ 
+ nslookup <domain> <ip address where your DNS is running>

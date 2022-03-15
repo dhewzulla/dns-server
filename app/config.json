@@ -1,8 +1,7 @@
 {
     "port":53,
-
     "logs":{
-        "output": "/var/c4feeds/logs"
+        "output": "./"
     },
     "ttl":30,
     "authority":  { 
@@ -13,38 +12,17 @@
         "type": "udp" 
     },
     "sink":{
-      "address": "64.113.59.107",
+      "address": "127.0.0.1",
       "ttl": 10             
     },
     "dnsServices":[{
-      "clients":["127.*,178.62.30.66","node19.globalinput.co.uk"]
+      "clients":["127.*"]
     },{
-      "clients":["86.127.228.3","oscar"],      
+      "clients":["192.168."],      
       "entries":[{        
-            "domain": "localdev",
-            "records": [{ "type": "A", "address": "192.168.1.144", "ttl": 30 }]
-         },{        
-            "domain": "localdev.channel4.com",
-            "records": [{ "type": "A", "address": "192.168.1.144", "ttl": 30 }]
-         }]   
-    },{
-      "clients":["86.161.163.129","Radoslaw"],      
-      "entries":[{        
-            "domain": "radoslaw.globalinput.co.uk",
-            "records": [{ "type": "A", "address": "192.168.1.119", "ttl": 30 }]            
-         },{        
-            "domain": "radoslaw2.globalinput.co.uk",
-            "records": [{ "type": "A", "address": "192.168.1.119", "ttl": 30 }]            
-         },{        
-            "domain": "radoslaw3.globalinput.co.uk",
+            "domain": "local.globalinput.co.uk",
             "records": [{ "type": "A", "address": "192.168.1.119", "ttl": 30 }]            
          }]   
-    },{ 
-       "clients":["192.168.","81.104.90.206"],
-       "entries" :[{        
-         "domain": "debug.iterativesolution.co.uk",
-         "records": [{ "type": "A", "address": "192.168.0.22", "ttl": 30 }]         
-      }]       
-   }]    
+    }]    
 }
 

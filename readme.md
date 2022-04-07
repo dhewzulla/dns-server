@@ -29,7 +29,7 @@ cd app
 npm install
 
 ### Usage
-node server.js
+npx nodemon  server.js 
 
 Note that you have to run this before sharing your network in order not to get EADDRINUSE error message
 

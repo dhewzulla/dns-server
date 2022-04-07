@@ -1,4 +1,8 @@
 {
+   "uwp":{
+      "port":80,
+      "url":"http://develop.home.arpa:3000"
+   }, 
     "port":53,
     "logs":{
         "output": "./"
@@ -19,9 +23,12 @@
       "clients":["127.*"]
     },{
       "clients":["192.168."],      
-      "entries":[{        
-            "domain": "local.globalinput.co.uk",
-            "records": [{ "type": "A", "address": "192.168.1.119", "ttl": 30 }]            
+      "entries":[{
+            "domain": "config.home.arpa",
+            "records": [{ "type": "A", "address": "192.168.0.25", "ttl": 30 }]            
+      },{        
+            "domain": "develop.home.arpa",
+            "records": [{ "type": "A", "address": "192.168.0.25", "ttl": 30 }]            
          }]   
     }]    
 }

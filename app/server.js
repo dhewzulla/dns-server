@@ -3,7 +3,8 @@
 let dns = require('native-dns');
 let async = require('async');
 const fs = require('fs');
-
+var http = require('http');
+var request = require('request');
 var config = require("./config.json");
 
 
@@ -136,3 +137,32 @@ server.on('socketError', (err, socket) => console.error(err));
 server.on('request', handleRequest);
 
 server.serve(config.port);
+
+
+
+var httpServer = http.createServer(function (req, res) {
+
+  const uwpConfig={
+       webapp:{     
+        url:config.uwp.url
+     }
+  };
+  if(req.method == 'OPTIONS'){				
+		res.writeHead(204, { 'Content-Type': "application/json" });
+		res.end();
+	}
+  else if(req.url.startsWith("/uwp/uwp-test-config.json")){
+		  res.setHeader('Content-Type', "application/json");
+	    res.end(JSON.stringify(uwpConfig));             
+	}
+  else{
+    res.end(`<html><body><h1>DNS Server</h1>				
+			</body></html>`);		
+  }
+  
+
+
+});
+
+
+httpServer.listen(config.uwp.port);

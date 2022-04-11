@@ -14,13 +14,18 @@
 
 Download, install and run  the DNS node server using the following commands on your terminal:
 
-`git clone git@github.com:dhewzulla/dns-server.git
- cd dns-server
- cd app
- npm install
- npx nodemon server.js `
+```
+   git clone git@github.com:dhewzulla/dns-server.git
+
+   cd dns-server
+
+   cd app
+
+   npm install
+
+   npx nodemon server.js
  
- 
+ ```
 
 ### app/config.json
 

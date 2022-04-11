@@ -1,46 +1,52 @@
+
 # DNS Server
 
+  
+ # Features
 
-Unique Features of the this DNS server
-  - Every client can have different DNS configuration, which mean a domain can be resolved to a different IP address depending on the IP address of the client sending the DNS query.
-  - Unknow client will receive a same IP address for all domains to sink the illegal DNS queries 
-  - All DNS query can be set to very short TTL so that any DNS can be changed immediately, even the responses of the forwarded DNS query results will be modified to set the TTL specifiied in the config.
+- Separate DNS configuration for each client , allowing a domain to be resolved to a different IP address depending on  the client sending the request --- useful client specific configuration in device application tests.  
 
+- Discarding requests from unauthorized clients.
 
+- All DNS query are set to a short TTL to enable instant configurations.  
 
 # Usage
 
-Download and install the DNS node server using the following commands on your terminal:
+Download, install and run  the DNS node server using the following commands on your terminal:
 
-git clone git@github.com:dhewzulla/dns-server.git
-cd dns-server
-cd app
-npm install
-
-
+`git clone git@github.com:dhewzulla/dns-server.git
+ cd dns-server
+ cd app
+ npm install
+ npx nodemon server.js `
+ 
+ 
 
 ### app/config.json
 
-* [logs] - the local of the log file
-* [ttl] - default TTL
-* [authority] - DNS server that the DNS queries not matched in the config will be forwarded to.
-* [dnsServices] - array of config element, each represent a DNS client that this DNS service can serve.
-  - clients: the ip address of the client that this DNS can serve
-  - entries:each element corresponding to one domain record. if this element empty, all the DNS query will be forwarded.
-  --domain: domain name
-   --record: domain record.
-
-
-### Installation
-
-cd app
-npm install
-
-### Usage
-npx nodemon  server.js 
-
-Note that you have to run this before sharing your network in order not to get EADDRINUSE error message
-
-you can test by using the following command:
  
- nslookup <domain> <ip address where your DNS is running>
+* [logs] - the local of the log file
+
+* [ttl] - default TTL
+
+* [authority] - DNS server that the DNS queries not matched in the config will be forwarded to.
+
+* [dnsServices] - array of config element, each represent a DNS client that this DNS service can serve.
+
+- clients: the ip address of the client that this DNS can serve
+
+- entries:each element corresponding to one domain record. if this element empty, all the DNS query will be forwarded.
+
+--domain: domain name
+
+--record: domain record.
+
+  
+  
+
+
+  
+
+  
+
+

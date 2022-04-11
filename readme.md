@@ -1,5 +1,5 @@
 # DNS Server
-Author: Dilshat Hewzulla
+
 
 Unique Features of the this DNS server
   - Every client can have different DNS configuration, which mean a domain can be resolved to a different IP address depending on the IP address of the client sending the DNS query.
@@ -8,6 +8,14 @@ Unique Features of the this DNS server
 
 
 
+# Usage
+
+Download and install the DNS node server using the following commands on your terminal:
+
+git clone git@github.com:dhewzulla/dns-server.git
+cd dns-server
+cd app
+npm install
 
 
 

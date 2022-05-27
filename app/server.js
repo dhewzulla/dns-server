@@ -145,15 +145,22 @@ var httpServer = http.createServer(function (req, res) {
   const uwpConfig={
        webapp:{     
         url:config.uwp.url
-     }
+      },
+      webapps:[]
   };
+  config.uwp.webapps.forEach(webapp=>{
+    uwpConfig.webapps.push({
+      name:webapp.name,
+      url:webapp.url
+    });
+  });
   if(req.method == 'OPTIONS'){				
 		res.writeHead(204, { 'Content-Type': "application/json" });
 		res.end();
 	}
   else if(req.url.startsWith("/uwp/uwp-test-config.json")){
 		  res.setHeader('Content-Type', "application/json");
-	    res.end(JSON.stringify(uwpConfig));             
+	    res.end(JSON.stringify(uwpConfig,null, 2));             
 	}
   else{
     res.end(`<html><body><h1>DNS Server</h1>				

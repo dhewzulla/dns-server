@@ -1,7 +1,11 @@
 {
    "uwp":{
       "port":80,
-      "url":"http://develop.home.arpa:3000"
+      "url":"http://develop.home.arpa:3000",
+      "webapps":[{
+        "name": "Local",
+        "url" :"http://develop.home.arpa:3000"
+      }]          
    }, 
     "port":53,
     "logs":{
